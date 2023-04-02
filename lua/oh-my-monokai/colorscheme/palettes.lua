@@ -1,4 +1,3 @@
 return {
-  'justinsgithub',
-  'LunarVim',
+'justinsgithub', 'LunarVim',
 }
