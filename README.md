@@ -8,7 +8,7 @@
 </div>
 
 
-[oh-my-monokai](./oh-my-monokai.png)
+![oh-my-monokai](./oh-my-monokai.png)
 
 ## Create your own palette 
 
