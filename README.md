@@ -244,11 +244,15 @@ require("oh-my-monokai").setup({
   })
 ```
 
-## 🔧 Command
+## Commands
 
 - run command `OMMPalette` to launch a menu and choose theme palette, you must have [nui.nvim](https://github.com/MunifTanjim/nui.nvim) installed
 - or run command `OMM` with parameter to change theme palette: For example:
   > `OMM justinsgithub`
+
+## Contributions
+
+Pull requests welcome, especially for adding more plugins support or creating your own palette (instructions above)
 
 ## Credits
 
