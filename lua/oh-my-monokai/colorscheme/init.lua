@@ -9,20 +9,19 @@ local M = {
 
 local hp = require("oh-my-monokai.color_helper")
 
--- set variable options for LSP help (not using) --- @param palettes
-
+-- @param palettes
 M.setup = function(palette)
 
   if not vim.tbl_contains(palettes, palette) then
-    local msg = 'Invalid palette, using default "justinsgithub"'
+    local msg = 'Invalid palette name, using default'
     local level = "info"
-    palette = "justinsgithub"
+    palette = "default"
     util.notify(msg, level)
   end
 
   M.palette = palette
 
-  ---@module "oh-my-monokai.colorscheme.palette.pro"
+  ---@module "oh-my-monokai.colorscheme.palette.default"
   local p = require("oh-my-monokai.colorscheme.palette." .. M.palette)
 
   --- @class Colorscheme
@@ -31,15 +30,15 @@ M.setup = function(palette)
   cs.editor = {
     background = config.transparent_background and "NONE" or p.background,
     foreground = p.text,
-    lineHighlightBackground = hp.blend(p.text, 0.05, p.background), -- "#fcfcfa0c", -- background: background
-    selectionBackground = hp.blend(p.dimmed1, 0.15, p.background), --"#c1c0c027", -- background: background
-    findMatchBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- background: background
+    lineHighlightBackground = hp.blend(p.text, 0.05, p.background),
+    selectionBackground = hp.blend(p.dimmed1, 0.15, p.background),
+    findMatchBackground = hp.blend(p.text, 0.15, p.background),
     findMatchBorder = p.accent3,
-    findMatchHighlightBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- background: background
-    foldBackground = hp.blend(p.text, 0.1, p.background), -- "#fcfcfa0c", -- background: background
-    wordHighlightBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- illuminateRead
-    selectionHighlightBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- illuminateText
-    wordHighlightStrongBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- illuminateWrite
+    findMatchHighlightBackground = hp.blend(p.text, 0.15, p.background),
+    foldBackground = hp.blend(p.text, 0.1, p.background),
+    wordHighlightBackground = hp.blend(p.text, 0.15, p.background),
+    selectionHighlightBackground = hp.blend(p.text, 0.15, p.background),
+    wordHighlightStrongBackground = hp.blend(p.text, 0.15, p.background),
   }
 
   cs.editorLineNumber = {
@@ -56,19 +55,19 @@ M.setup = function(palette)
     background = p.dimmed5, -- "#403e41",
     border = p.dimmed5, -- "#403e41",
     foreground = p.dimmed1, -- "#c1c0c0",
-    highlightForeground = p.text, -- "#fcfcfa",
+    highlightForeground = p.text, -- "#f6f6f6",
     selectedBackground = p.dimmed3, -- "#727072",
   }
 
   cs.editorIndentGuide = {
     background = p.dimmed5, -- "#403e41",
-    activeBackground = p.dimmed3, -- "#5b595c",
+    activeBackground = p.dimmed3, -- "#727072",
   }
 
   cs.editorGutter = {
-    addedBackground = p.accent4, -- "#a9dc76",
-    deletedBackground = p.accent1, -- "#ff6188",
-    modifiedBackground = p.accent2, -- "#fc9867",
+    addedBackground = p.accent4, -- "#81f900",
+    deletedBackground = p.accent1, -- "#ff3f4f",
+    modifiedBackground = p.accent2, -- "#e5a422",
   }
 
   cs.sideBar = {
@@ -77,11 +76,11 @@ M.setup = function(palette)
   }
 
   cs.sideBarTitle = {
-    foreground = p.dimmed4, -- "#5b595c",
+    foreground = p.dimmed4, -- "#5c6370",
   }
 
   cs.list = {
-    activeSelectionBackground = hp.blend(p.text, 0.11, cs.sideBar.background), -- "#fcfcfa1c", -- background: sideBarBackground,
+    activeSelectionBackground = hp.blend(p.text, 0.11, cs.sideBar.background),
   }
 
   cs.sideBarSectionHeader = {
@@ -96,32 +95,32 @@ M.setup = function(palette)
   cs.button = {
     background = p.dimmed5, -- "#403e41",
     foreground = p.dimmed1, -- "#c1c0c0",
-    hoverBackground = p.dimmed4, -- "#5b595c",
-    separator = p.background, -- "#272822",
+    hoverBackground = p.dimmed4, -- "#5c6370",
+    separator = p.background, -- "#1e1e1e",
   }
 
   cs.scrollbarSlider = {
-    hoverBackground = hp.blend(p.dimmed1, 0.15, p.background), -- "#c1c0c026", -- background: background
+    hoverBackground = hp.blend(p.dimmed1, 0.15, p.background), -- "#???", -- background: background
   }
 
   cs.gitDecoration = {
-    addedResourceForeground = p.accent4, -- "#a9dc76",
-    conflictingResourceForeground = p.accent2, -- "#fc9867",
-    deletedResourceForeground = p.accent1, -- "#ff6188",
+    addedResourceForeground = p.accent4, -- "#81f900",
+    conflictingResourceForeground = p.accent2, -- "#e5a422",
+    deletedResourceForeground = p.accent1, -- "#ff3f4f",
     ignoredResourceForeground = p.dimmed4, -- "#5b595c",
-    modifiedResourceForeground = p.accent3, -- "#ffd866",
-    stageDeletedResourceForeground = p.accent1, -- "#ff6188",
-    stageModifiedResourceForeground = p.accent3, -- "#ffd866",
-    untrackedResourceForeground = p.dimmed2, -- "#c1c0c0",
+    modifiedResourceForeground = p.accent3, -- "#ffd945",
+    stageDeletedResourceForeground = p.accent1, -- "#ff3f4f",
+    stageModifiedResourceForeground = p.accent3, -- "#ffd945",
+    untrackedResourceForeground = p.dimmed1, -- "#c1c0c0",
   }
 
   cs.inputValidation = {
     errorBackground = p.dimmed5, -- "#403e41",
-    errorBorder = p.accent1, -- "#ff6188",
-    errorForeground = p.accent1, --"#ff6188",
+    errorBorder = p.pink, -- "#ff007c",
+    errorForeground = p.pink, --"#ff007c",
     infoBackground = p.dimmed5, -- "#403e41",
-    infoBorder = p.accent5, --"#78dce8",
-    infoForeground = p.accent5, --"#78dce8",
+    infoBorder = p.accent5, --"#00a0e4",
+    infoForeground = p.accent5, --"#00a0e4",
     warningBackground = p.dimmed5, --"#403e41",
     warningBorder = p.accent2, --"#fc9867",
     warningForeground = p.accent2, --"#fc9867",
@@ -140,7 +139,7 @@ M.setup = function(palette)
 
   cs.terminal = {
     background = p.dimmed5, -- "#403e41",
-    foreground = p.text, -- "#fcfcfa",
+    foreground = p.text, -- "#f6f6f6",
   }
 
   cs.terminalCursor = {
@@ -154,12 +153,12 @@ M.setup = function(palette)
   }
 
   cs.tab = {
-    activeBackground = config.transparent_background and "NONE" or p.background, -- "#272822",
-    activeBorder = p.accent3, -- "#ffd866",
-    activeForeground = p.accent3, -- "#ffd866",
+    activeBackground = config.transparent_background and "NONE" or p.background, -- "#1e1e1e",
+    activeBorder = p.accent3, -- "#ffd945",
+    activeForeground = p.accent3, -- "#ffd945",
     inactiveBackground = hp.lighten(p.background, 15),
     inactiveForeground = p.dimmed2, -- "#939293",
-    unfocusedActiveBackground = p.background, -- "#272822",
+    unfocusedActiveBackground = p.background, -- "#1e1e1e",
     unfocusedActiveBorder = p.dimmed2, -- "#939293",
     unfocusedActiveForeground = p.dimmed1, -- "#c1c0c0",
   }
@@ -172,33 +171,18 @@ M.setup = function(palette)
   }
 
   cs.diffEditor = {
-    insertedLineBackground = hp.blend(p.accent4, 0.1, p.dark1), -- #a9dc7619
-    removedLineBackground = hp.blend(p.accent1, 0.1, p.dark1), -- #ff618819
-    modifiedLineBackground = hp.blend(p.accent2, 0.1, p.dark1), -- #fc986719
+    insertedLineBackground = hp.blend(p.accent4, 0.1, p.dark1),
+    removedLineBackground = hp.blend(p.accent1, 0.1, p.dark1),
+    modifiedLineBackground = hp.blend(p.accent2, 0.1, p.dark1),
   }
 
   cs.diffEditorOverview = {
-    insertedForeground = hp.blend(p.accent4, 0.65, cs.diffEditor.insertedLineBackground), -- #a9dc76a5
-    removedForeground = hp.blend(p.accent1, 0.65, cs.diffEditor.removedLineBackground), -- #ff6188a5
-    modifiedForeground = hp.blend(p.accent2, 0.65, cs.diffEditor.modifiedLineBackground), -- #fc9867a5
+    insertedForeground = hp.blend(p.accent4, 0.65, cs.diffEditor.insertedLineBackground),
+    removedForeground = hp.blend(p.accent1, 0.65, cs.diffEditor.removedLineBackground),
+    modifiedForeground = hp.blend(p.accent2, 0.65, cs.diffEditor.modifiedLineBackground),
   }
 
-  cs.base = {
-    dark = p.dark2, -- "#19181a"
-    black = p.dark1, --"#221f22",
-    red = p.accent1, -- "#ff6188",
-    green = p.accent4, -- "#a9dc76",
-    yellow = p.accent3, -- "#ffd866",
-    blue = p.accent2, -- "#fc9867",
-    magenta = p.accent6, -- "#ab9df2",
-    cyan = p.accent5, -- "#78dce8",
-    white = p.text, -- "#fcfcfa",
-    dimmed1 = p.dimmed1, -- "#c1c0c0",
-    dimmed2 = p.dimmed2, -- "#939293",
-    dimmed3 = p.dimmed3, -- "#727072",
-    dimmed4 = p.dimmed4, -- "#5b595c",
-    dimmed5 = p.dimmed5, -- "#403e41",
-  }
+  cs.base = p
 
   M.colors = cs
   return cs

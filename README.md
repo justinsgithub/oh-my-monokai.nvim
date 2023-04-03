@@ -106,7 +106,7 @@ require("oh-my-monokai").setup({
     annotation = { italic = true },
     tag_attribute = { italic = true }, -- attribute of tag in reactjs
   },
-  palette = "justinsgithub", -- justinsgithub | LunarVim
+  palette = "default",
   inc_search = "background", -- underline | background
   background_clear = {
     -- "float_win",
@@ -121,7 +121,7 @@ require("oh-my-monokai").setup({
       underline_visible = false,
     },
     indent_blankline = {
-      context_highlight = "default", -- default | pro
+      context_highlight = "default",
       context_start_underline = false,
     },
   },

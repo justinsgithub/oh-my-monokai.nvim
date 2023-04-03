@@ -3,38 +3,38 @@ local M = {}
 --- @param c Colorscheme The color palette
 --- @param config Config
 M.setup = function(c, config, _)
-  local styles = config.styles
+  local _ = config.styles
   return {
-    Comment = { fg = c.base.dimmed3, italic = styles.comment.italic }, -- Comments
-    Constant = { fg = c.base.magenta }, -- (preferred) any constant
-    String = { fg = c.base.yellow }, --   a string constant: "this is a string"
-    Character = { fg = c.base.magenta }, -- a character constant: 'c', '\n'
-    Number = { fg = c.base.magenta }, -- a number constant: 234, 0xff
-    Boolean = { fg = c.base.magenta }, -- a boolean constant: TRUE, false
-    Float = { fg = c.base.magenta }, -- a floating point constant: 2.3e10
-    Identifier = { fg = c.base.white }, -- (preferred) any variable name
-    Function = { fg = c.base.green }, -- function name (also: methods for classes)
-    Statement = { fg = c.base.magenta }, -- (preferred) any statement
-    Conditional = { fg = c.base.red }, --  if, then, else, endif, switch, etc
-    Repeat = { fg = c.base.red }, -- for, do, while, etc
-    Label = { fg = c.base.red }, -- case, default, etc
-    Operator = { fg = c.base.red }, -- "sizeof", "+", "*", etc
-    Keyword = { fg = c.base.red, italic = styles.keyword.italic }, -- any other keyword
-    Exception = { fg = c.base.red }, -- try, catch, throw
-    PreProc = { fg = c.base.yellow }, -- (preferred) generic Preprocessor
-    Include = { fg = c.base.red }, -- preprocessor #include
-    Define = { fg = c.base.red }, -- preprocessor #define
-    Macro = { fg = c.base.red }, -- same as Define
-    PreCondit = { fg = c.base.red }, -- preprocessor #if, #else, #endif, etc
-    Type = { fg = c.base.white }, -- React, ReactDOM (import React from 'react';)
-    StorageClass = { fg = c.base.red, italic = styles.type.italic }, -- static, register, volatile, etc
-    Structure = { fg = c.base.cyan, italic = styles.type.italic }, -- struct, union, enum, etc
-    Typedef = { fg = c.base.red }, -- A typedef
-    Special = { fg = c.base.blue }, -- (preferred) any special symbol
-    SpecialChar = { fg = c.base.blue }, -- special character in a constant
+    Comment = { fg = c.base.comment, italic = c.base.styles.comment.italic }, -- Comments
+    Constant = { fg = c.base.constant }, -- (preferred) any constant
+    String = { fg = c.base.str }, --   a string constant: "this is a string"
+    Character = { fg = c.base.character }, -- a character constant: 'c', '\n'
+    Number = { fg = c.base.number }, -- a number constant: 234, 0xff
+    Boolean = { fg = c.base.boolean }, -- a boolean constant: TRUE, false
+    Float = { fg = c.base.float }, -- a floating point constant: 2.3e10
+    Identifier = { fg = c.base.identifier }, -- (preferred) any variable name
+    Function = { fg = c.base.func }, -- function name (also: methods for classes)
+    Statement = { fg = c.base.statement }, -- (preferred) any statement
+    Conditional = { fg = c.base.conditional }, --  if, then, else, endif, switch, etc
+    Repeat = { fg = c.base.peat }, -- for, do, while, etc
+    Label = { fg = c.base.label }, -- case, default, etc
+    Operator = { fg = c.base.op }, -- "sizeof", "+", "*", etc
+    Keyword = { fg = c.base.kword, italic = c.base.styles.keyword.italic }, -- any other keyword
+    Exception = { fg = c.base.exc }, -- try, catch, throw
+    PreProc = { fg = c.base.preproc }, -- (preferred) generic Preprocessor
+    Include = { fg = c.base.include }, -- preprocessor #include
+    Define = { fg = c.base.define }, -- preprocessor #define
+    Macro = { fg = c.base.macro }, -- same as Define
+    PreCondit = { fg = c.base.precondit }, -- preprocessor #if, #else, #endif, etc
+    Type = { fg = c.base.type }, -- React, ReactDOM (import React from 'react';)
+    StorageClass = { fg = c.base.storageclass, italic = c.base.styles.type.italic }, -- static, register, volatile, etc
+    Structure = { fg = c.base.structure, italic = c.base.styles.type.italic }, -- struct, union, enum, etc
+    Typedef = { fg = c.base.typedef }, -- A typedef
+    Special = { fg = c.base.special }, -- (preferred) any special symbol
+    SpecialChar = { fg = c.base.specialchar }, -- special character in a constant
     -- Tag = {}, -- you can use CTRL-] on this
-    Delimiter = { fg = c.base.white }, -- character that needs attention
-    SpecialComment = { fg = c.base.dimmed3 }, -- special things inside a comment
+    Delimiter = { fg = c.base.delimiter }, -- character that needs attention
+    SpecialComment = { fg = c.base.specialcomment }, -- special things inside a comment
     -- Debug = {}, -- debugging statements
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
     Bold = { bold = true },
@@ -43,7 +43,7 @@ M.setup = function(c, config, _)
     Error = { fg = c.inputValidation.errorForeground }, -- (preferred) any erroneous construct
     Todo = {
       bg = c.editor.background,
-      fg = c.base.magenta,
+      fg = c.base.todo,
       bold = true,
     }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     javaAnnotation = { fg = c.base.dimmed2 },

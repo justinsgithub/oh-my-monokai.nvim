@@ -9,7 +9,7 @@ local function get_real_color(hex_color, base)
   end
 
   local palette = require("oh-my-monokai.colorscheme").palette
-  ---@module "oh-my-monokai.colorscheme.palette.justinsgithub"
+  ---@module "oh-my-monokai.colorscheme.palette.default"
   local c = require("oh-my-monokai.colorscheme.palette." .. palette)
   if base == nil then
     base = c.background

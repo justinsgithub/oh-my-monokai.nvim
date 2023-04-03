@@ -1,7 +1,7 @@
-local config = require("oh-my-monokai.config")
-local util = require("oh-my-monokai.util")
-local theme = require("oh-my-monokai.theme")
-local command = require("oh-my-monokai.command")
+local config = require('oh-my-monokai.config')
+local util = require('oh-my-monokai.util')
+local theme = require('oh-my-monokai.theme')
+local command = require('oh-my-monokai.command')
 
 local M = {}
 
@@ -15,7 +15,7 @@ M.setup = function(options)
 end
 
 M.get_base_color = function()
-  local base_color = require("oh-my-monokai.colorscheme").colors.base
+  local base_color = require('oh-my-monokai.colorscheme').colors.base
   return base_color
 end
 

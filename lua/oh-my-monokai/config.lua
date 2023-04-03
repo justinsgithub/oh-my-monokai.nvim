@@ -16,7 +16,7 @@ local default = {
     annotation = { italic = true },
     tag_attribute = { italic = true }, -- attribute of tag in reactjs
   },
-  palette = vim.o.background == "light" and "LunarVim" or "justinsgithub", -- palettes
+  palette = 'default',
   inc_search = "background", -- underline | background
   background_clear = {
     -- "float_win",
@@ -33,7 +33,7 @@ local default = {
       bold = true,
     },
     indent_blankline = {
-      context_highlight = "default", -- default | pro
+      context_highlight = "default",
       context_start_underline = false,
     },
   },
