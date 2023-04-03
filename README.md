@@ -1,7 +1,6 @@
 <div align="center">
     <div class="b-header">
         <a class="active" href="https://github.com/justinsgithub/oh-my-monokai.nvim">
-            <img style="width: 16rem" src="./oh-my-monokai.png" alt="">
             <h1>Oh My Monokai</h1>
             <h2>Edit your code obnoxiously</h2>
         </a>
@@ -9,9 +8,102 @@
 </div>
 
 
-### Create your own palette
+[oh-my-monokai](./oh-my-monokai.png)
 
-![custom](./oh-my-monokai.png)
+## Create your own palette 
+
+You can easily create your own, just fork this repository and add a file called `./lua/oh-my-monokai/colorscheme/palette/{your_github_user_name}.lua`
+
+Copy the default palette to your personal file, customize as desired, and make a pull request
+
+
+
+```lua
+-- ./lua/oh-my-monokai/colorscheme/palette/default.lua
+
+return {
+  background = '#1e1e1e',
+  text = '#f6f6f6',
+  dark = '#19181a',
+  dark1 = '#221f22',
+  dark2 = '#19181a',
+  accent1 = '#ff3f4f',
+  accent2 = '#e5a422',
+  accent3 = '#ffd945',
+  accent4 = '#81f900',
+  accent5 = '#00a0e4',
+  accent6 = '#e542ff',
+  accent7 = '#007dd8',
+  accent8 = '#ff8b39',
+  black = '#221f22',
+  white = '#fcfcfa',
+  delimiter = '#fcfcfa',
+  magenta = '#e373ce',
+  character = '#e373ce',
+  number = '#e373ce',
+  boolean = '#e373ce',
+  float = '#e373ce',
+  purple = '#e542ff',
+  red = '#ff3f4f',
+  op = '#ff3f4f',
+  exc = '#ff3f4f',
+  kword = '#ff3f4f',
+  label = '#ff3f4f',
+  peat = '#ff3f4f',
+  statement = '#ff3f4f',
+  include = '#ff3f4f',
+  define = '#ff3f4f',
+  macro = '#ff3f4f',
+  precondit = '#ff3f4f',
+  yellow = '#ffd945',
+  preproc = '#ffd945',
+  str = '#ffd945',
+  orange = '#e5a422',
+  identifier = '#e5a422',
+  dark_orange = '#ff8b39',
+  green = '#81f900',
+  func = '#81f900',
+  leaf = '#6fd80d',
+  blue = '#007dd8',
+  type = '#007dd8',
+  sky = '#00a0e4',
+  teal = '#19d1e5',
+  pink = '#ff007c',
+  todo = '#ff007c',
+  typedef = '#ff007c',
+  storageclass = '#ff007c',
+  conditional = '#ff007c',
+  constant = '#ff007c',
+  cyan = '#00dfff',
+  special = '#00dfff',
+  specialchar = '#00dfff',
+  structure = '#00dfff',
+  dimmed1 = '#c1c0c0',
+  dimmed2 = '#939293', -- border
+  dimmed3 = '#727072',
+  specialcomment = '#727072',
+  comment = '#727072',
+  dimmed4 = '#5c6370',
+  dimmed5 = '#403e41',
+  styles = {
+    comment = { italic = true },
+    keyword = { italic = true }, -- any other keyword
+    type = { italic = true }, -- (preferred) int, long, char, etc
+    storageclass = { italic = true }, -- static, register, volatile, etc
+    structure = { italic = true }, -- struct, union, enum, etc
+    parameter = { italic = true }, -- parameter pass in function
+    annotation = { italic = true },
+    tag_attribute = { italic = true }, -- attribute of tag in reactjs
+  },
+}
+
+```
+
+IMPORTANT: make sure you run script to add your palette to the palette list
+
+```sh
+bash ./scripts/palette-list.sh && git add . && git commit -m "added palette" && git push
+```
 
 ### 🔌 Plugin support
 
@@ -57,13 +149,6 @@ use {
 
 ## 🔨 Configuration
 
-There are two palettes included in this plugin currently, the default and my own custom (justinsgithub).
-
-You can easily create create your own, just fork this repository and add a file called `./lua/oh-my-monokai/colorscheme/palette/{your_github_user_name}.lua`
-
-Copy the default palette to your personal file and customize as needed
-
-Then make a pull request and you'll have your own custom theme
 
 
 Example configuration:
@@ -95,6 +180,8 @@ require("oh-my-monokai").setup({
   ---@param c Colorscheme
   override = function(c) end,
 })
+
+```
 
 ## 📚 Usage
 
@@ -162,3 +249,11 @@ require("oh-my-monokai").setup({
 - run command `OMMPalette` to launch a menu and choose theme palette, you must have [nui.nvim](https://github.com/MunifTanjim/nui.nvim) installed
 - or run command `OMM` with parameter to change theme palette: For example:
   > `OMM justinsgithub`
+
+## Credits
+
+Pretty much all credit goes to [monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim)
+
+A large reason for this fork is to provide an easy way for other users to contribute their own palette and make it just the way they want (instructions above).
+
+Also big shout out to [monokai-vibrant](https://github.com/dylantmarsh/monokai-vibrant), the inspiration for this theme. 
