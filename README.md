@@ -1,40 +1,17 @@
 <div align="center">
     <div class="b-header">
         <a class="active" href="https://github.com/justinsgithub/oh-my-monokai.nvim">
-            <img style="width: 16rem" src="https://user-images.githubusercontent.com/80513079/209661594-1fa9abea-825a-4b1c-91d6-f6634d68f94e.svg" alt="">
+            <img style="width: 16rem" src="./oh-my-monokai.png" alt="">
             <h1>Oh My Monokai</h1>
-            <h2>Beautiful functionality for professional developers</h2>
+            <h2>Edit your code obnoxiously</h2>
         </a>
     </div>
 </div>
 
-Find out more here [monokai.pro](https://monokai.pro/)
 
-![oh-my-monokai-macbook](https://user-images.githubusercontent.com/80513079/218453999-87c957f1-658d-49a6-bf67-291d3e46fa9a.png)
+### Create your own palette
 
-## ⭐ Pro
-
-![pro](https://user-images.githubusercontent.com/80513079/209659184-ed5a28c3-cb7f-4de7-8f7c-5d206dc11540.png)
-
-## 🛑 Octagon
-
-![octagon](https://user-images.githubusercontent.com/80513079/209659175-97db9a95-edd0-4b6e-8087-7fb1aee45c52.png)
-
-## 🤖 Machine
-
-![machine](https://user-images.githubusercontent.com/80513079/209659194-d9fe09f5-ea35-4130-b2e8-d854b7b6fb72.png)
-
-## ☕ Ristretto
-
-![ristretto](https://user-images.githubusercontent.com/80513079/209659205-90200c24-d302-4b70-811a-36e6e7845f6b.png)
-
-## 🌈 Spectrum
-
-![spectrum](https://user-images.githubusercontent.com/80513079/209659126-9df0d401-020f-4b0c-963d-5a930d0a6974.png)
-
-## 👴 Classic
-
-![classic](https://user-images.githubusercontent.com/80513079/209659153-9362a05f-2b7f-4b36-acf1-d13bef6a9118.png)
+![custom](./oh-my-monokai.png)
 
 ### 🔌 Plugin support
 
@@ -64,14 +41,14 @@ Find out more here [monokai.pro](https://monokai.pro/)
 [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'loctvl842/oh-my-monokai.nvim'
+Plug 'justinsgithub/oh-my-monokai.nvim'
 ```
 
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use {
-  "loctvl842/oh-my-monokai.nvim",
+  "justinsgithub/oh-my-monokai.nvim",
   config = function()
     require("oh-my-monokai").setup()
   end
@@ -80,14 +57,14 @@ use {
 
 ## 🔨 Configuration
 
-There are two themes included in this plugin currently.
+There are two palettes included in this plugin currently, the default and my own custom (justinsgithub).
 
-- [Pro](#-pro) – Monokai Pro _(default)_
-- [Octagon](#-octagon) – Monokai Pro (Palette Octagon)
-- [Machine](#-machine) – Monokai Pro (Palette Machine)
-- [Ristretto](#-ristretto) – Monokai Pro (Palette Machine)
-- [Spectrum](#-spectrum) – Monokai Pro (Palette Machine)
-- [Classic](#-classic) – Monokai Classic
+You can easily create create your own, just fork this repository and add a file called `./lua/oh-my-monokai/colorscheme/palette/{your_github_user_name}.lua`
+
+Copy the default palette to your personal file and customize as needed
+
+Then make a pull request and you'll have your own custom theme
+
 
 Example configuration:
 
@@ -96,17 +73,7 @@ require("oh-my-monokai").setup({
   transparent_background = false,
   terminal_colors = true,
   devicons = true, -- highlight the icons of `nvim-web-devicons`
-  styles = {
-    comment = { italic = true },
-    keyword = { italic = true }, -- any other keyword
-    type = { italic = true }, -- (preferred) int, long, char, etc
-    storageclass = { italic = true }, -- static, register, volatile, etc
-    structure = { italic = true }, -- struct, union, enum, etc
-    parameter = { italic = true }, -- parameter pass in function
-    annotation = { italic = true },
-    tag_attribute = { italic = true }, -- attribute of tag in reactjs
-  },
-  palette = "default",
+  palette = "default", -- or create your own ^^ e.g. justinsgithub
   inc_search = "background", -- underline | background
   background_clear = {
     -- "float_win",
@@ -128,69 +95,6 @@ require("oh-my-monokai").setup({
   ---@param c Colorscheme
   override = function(c) end,
 })
-```
-
-- Check my [nvim](https://github.com/loctvl842/nvim) to see my plugins setup for `border` if you want to set `background_clear`
-
-For example:
-
-<details>
-  <summary>float_win</summary>
-
-```lua
-require("oh-my-monokai").setup({
-    -- ... your config
-    background_clear = { "float_win" }
-    -- ... your config
-})
-
-require("cmp").setup({
-    -- ... your config
-    window = {
-      border = "rounded",
-    }
-    completion = {
-        border = "rounded",
-    }
-    -- ... your config
-})
-```
-
-- With the above config:
-  ![bg_clear_cmp](https://user-images.githubusercontent.com/80513079/218801625-a2b43cb0-175c-4463-9290-a361deb41f6a.png)
-
-- With the default config:
-  ![default_cmp](https://user-images.githubusercontent.com/80513079/218804686-834c624d-d9bf-45a1-a1bd-a6d05e70e1b8.png)
-
-</details>
-
-<details>
-  <summary>Telescope</summary>
-
-```lua
-require("oh-my-monokai").setup({
-    -- ... your config
-    background_clear = {}
-    -- ... your config
-})
-
-require("telescope").setup({
-    -- ... your config
-    defaults = {
-      borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
-    }
-    -- ... your config
-})
-```
-
-- With the above config:
-
-![removed_border_telescope](https://user-images.githubusercontent.com/80513079/218804055-a5cbf9d4-5c0f-4c0f-9cfe-5362af3714e8.png)
-
-- With the default config:
-  ![default_telescope](https://user-images.githubusercontent.com/80513079/218803566-56852087-8d3c-410c-854a-89bb49f8d981.png)
-
-</details>
 
 ## 📚 Usage
 
@@ -255,6 +159,6 @@ require("oh-my-monokai").setup({
 
 ## 🔧 Command
 
-- run command `MonokaiProSelect` to launch a menu to choose theme palette (required: [nui.nvim](https://github.com/MunifTanjim/nui.nvim))
-- or we can run command `MonokaiPro` with parameter to change theme palette: For example:
-  > `MonokaiPro classic`
+- run command `OMMPalette` to launch a menu and choose theme palette, you must have [nui.nvim](https://github.com/MunifTanjim/nui.nvim) installed
+- or run command `OMM` with parameter to change theme palette: For example:
+  > `OMM justinsgithub`

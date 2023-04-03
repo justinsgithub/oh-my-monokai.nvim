@@ -1,8 +1,8 @@
 local colors = require("oh-my-monokai.colorscheme").colors
 
-local monokai_pro = {}
+local mmo = {}
 
-monokai_pro.normal = {
+mmo.normal = {
   a = { bg = colors.base.yellow, fg = colors.base.black, gui = "bold" },
   b = { bg = colors.base.dimmed5, fg = colors.base.yellow },
   c = {
@@ -15,30 +15,30 @@ monokai_pro.normal = {
   },
 }
 
-monokai_pro.insert = {
+mmo.insert = {
   a = { bg = colors.base.green, fg = colors.base.black },
   b = { bg = colors.base.dimmed5, fg = colors.base.green },
 }
 
-monokai_pro.command = {
+mmo.command = {
   a = { bg = colors.base.yellow, fg = colors.base.black },
   b = { bg = colors.base.dimmed5, fg = colors.base.yellow },
 }
 
-monokai_pro.visual = {
+mmo.visual = {
   a = { bg = colors.base.magenta, fg = colors.base.black },
   b = { bg = colors.base.dimmed5, fg = colors.base.magenta },
 }
 
-monokai_pro.replace = {
+mmo.replace = {
   a = { bg = colors.base.red, fg = colors.base.black },
   b = { bg = colors.base.dimmed5, fg = colors.base.red },
 }
 
-monokai_pro.inactive = {
+mmo.inactive = {
   a = { bg = colors.base.black, fg = colors.base.yellow },
   b = { bg = colors.base.black, fg = colors.base.black },
   -- c = { bg = colors.base.black, fg = colors.base.black },
 }
 
-return monokai_pro
+return mmo

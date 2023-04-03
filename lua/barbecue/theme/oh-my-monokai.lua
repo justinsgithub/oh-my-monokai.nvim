@@ -1,6 +1,6 @@
 local c = require("oh-my-monokai.colorscheme").colors
 if c == nil then
-  c = require("oh-my-monokai.colorscheme").setup("pro")
+  c = require("oh-my-monokai.colorscheme").setup("default")
 end
 
 local M = {

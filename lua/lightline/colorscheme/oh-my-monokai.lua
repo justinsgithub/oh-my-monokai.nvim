@@ -1,8 +1,8 @@
 local colors = require("oh-my-monokai.colorscheme").colors
 
-local oh_my_monokai = {}
+local omm = {}
 
-oh_my_monokai.normal = {
+omm.normal = {
   left = {
     { colors.base.black, colors.base.yellow },
     { colors.base.yellow, colors.editorSuggestWidget.background },
@@ -16,28 +16,28 @@ oh_my_monokai.normal = {
   warning = { { colors.base.black, colors.base.blue } },
 }
 
-oh_my_monokai.insert = {
+omm.insert = {
   left = {
     { colors.base.black, colors.base.green },
     { colors.base.green, colors.editorSuggestWidget.background },
   },
 }
 
-oh_my_monokai.visual = {
+omm.visual = {
   left = {
     { colors.base.black, colors.base.magenta },
     { colors.base.magenta, colors.editorSuggestWidget.background },
   },
 }
 
-oh_my_monokai.replace = {
+omm.replace = {
   left = {
     { colors.base.black, colors.base.red },
     { colors.base.red, colors.editorSuggestWidget.background },
   },
 }
 
-oh_my_monokai.inactive = {
+omm.inactive = {
   left = {
     { colors.base.yellow, colors.base.black },
     { colors.base.black, colors.base.black },
@@ -49,4 +49,4 @@ oh_my_monokai.inactive = {
 
 package.loaded["colors"] = nil
 
-return oh_my_monokai
+return omm
