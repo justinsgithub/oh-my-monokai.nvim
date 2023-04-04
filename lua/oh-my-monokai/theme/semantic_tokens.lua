@@ -3,7 +3,6 @@ local M = {}
 --- @param c Colorscheme The color palette
 --- @param config Config
 M.setup = function(c, config, _)
-  local styles = config.styles
   return {
     -- type
     ["@lsp.type.class"] = { link = "Structure" },
@@ -14,17 +13,17 @@ M.setup = function(c, config, _)
     ["@lsp.type.interface"] = { link = "Structure" },
     ["@lsp.type.macro"] = { link = "Macro" },
     ["@lsp.type.method"] = { link = "Function" },
-    ["@lsp.type.namespace"] = { link = "Function" },
+    ["@lsp.type.namespace"] = { link = "Identifier" },
     ["@lsp.type.parameter"] = { link = "Identifier" },
-    ["@lsp.type.property"] = { link = "Function" },
+    ["@lsp.type.property"] = { link = "Identifier" },
     ["@lsp.type.struct"] = { link = "Structure" },
     ["@lsp.type.type"] = { link = "Type" },
     ["@lsp.type.typeParameter"] = { link = "TypeDef" },
-    ["@lsp.type.variable"] = { link = "Function" },
+    ["@lsp.type.variable"] = { link = "Identifier" },
 
     -- mod
-    -- ["@lsp.mod.declaration"] = { fg = c.base.blue },
-    -- ["@lsp.mod.definition"] = { fg = c.base.blue },
+    -- ["@lsp.mod.declaration"] = { fg = c.base.cyan },
+    -- ["@lsp.mod.definition"] = { fg = c.base.cyan },
     -- ["@lsp.mod.readonly"] = { fg = c.base.magenta },
     -- ["@lsp.mod.static"] = {},
     ["@lsp.mod.deprecated"] = { strikethrough = true },
@@ -39,17 +38,17 @@ M.setup = function(c, config, _)
     -- ["@lsp.typemod.enum"] = {},
     -- ["@lsp.typemod.enumNumber"] = {},
     ["@lsp.typemod.function.declaration"] = { fg = c.base.green },
-    ["@lsp.typemod.function.defaultLibrary"] = { fg = c.base.cyan },
+    ["@lsp.typemod.function.defaultLibrary"] = { fg = c.base.blue },
     -- ["@lsp.typemod.interface"] = {},
     -- ["@lsp.typemod.macro"] = {},
     -- ["@lsp.typemod.method"] = {},
     -- ["@lsp.typemod.namespace"] = {},
-    ["@lsp.typemod.parameter.declaration"] = { fg = c.base.cyan, italic = styles.parameter.italic },
+    ["@lsp.typemod.parameter.declaration"] = { fg = c.base.blue, italic = c.base.styles.parameter.italic },
     -- ["@lsp.typemod.property"] = {},
     -- ["@lsp.typemod.struct"] = {},
     -- ["@lsp.typemod.type"] = {},
     -- ["@lsp.typemod.typeParameter"] = {},
-    ["@lsp.typemod.variable.readonly"] = { fg = c.base.pink },
+    ["@lsp.typemod.variable.readonly"] = { fg = c.base.magenta },
   }
 end
 

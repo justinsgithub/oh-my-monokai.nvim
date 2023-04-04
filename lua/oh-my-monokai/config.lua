@@ -6,16 +6,6 @@ local default = {
   transparent_background = false,
   terminal_colors = true,
   devicons = false,
-  styles = {
-    comment = { italic = true },
-    keyword = { italic = true }, -- any other keyword
-    type = { italic = true }, -- (preferred) int, long, char, etc
-    storageclass = { italic = true }, -- static, register, volatile, etc
-    structure = { italic = true }, -- struct, union, enum, etc
-    parameter = { italic = true }, -- parameter pass in function
-    annotation = { italic = true },
-    tag_attribute = { italic = true }, -- attribute of tag in reactjs
-  },
   palette = 'default',
   inc_search = "background", -- underline | background
   background_clear = {
@@ -33,7 +23,6 @@ local default = {
       bold = true,
     },
     indent_blankline = {
-      context_highlight = "default",
       context_start_underline = false,
     },
   },

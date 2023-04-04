@@ -173,7 +173,6 @@ require("oh-my-monokai").setup({
       underline_visible = false,
     },
     indent_blankline = {
-      context_highlight = "default",
       context_start_underline = false,
     },
   },

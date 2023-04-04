@@ -3,7 +3,7 @@ local M = {}
 --- @param c Colorscheme The color palette
 --- @param config Config
 M.setup = function(c, config, _)
-  local _ = config.styles
+  local _ = config
   return {
     Comment = { fg = c.base.comment, italic = c.base.styles.comment.italic }, -- Comments
     Constant = { fg = c.base.constant }, -- (preferred) any constant
@@ -32,7 +32,7 @@ M.setup = function(c, config, _)
     Typedef = { fg = c.base.typedef }, -- A typedef
     Special = { fg = c.base.special }, -- (preferred) any special symbol
     SpecialChar = { fg = c.base.specialchar }, -- special character in a constant
-    -- Tag = {}, -- you can use CTRL-] on this
+    Tag = { fg = c.base.tag }, -- you can use CTRL-] on this
     Delimiter = { fg = c.base.delimiter }, -- character that needs attention
     SpecialComment = { fg = c.base.specialcomment }, -- special things inside a comment
     -- Debug = {}, -- debugging statements

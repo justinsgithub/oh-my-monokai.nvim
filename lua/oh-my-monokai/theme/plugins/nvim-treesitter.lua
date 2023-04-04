@@ -1,9 +1,9 @@
 local M = {}
 
 --- @param c Colorscheme The color palette
---- @param config Config
-M.setup = function(c, config, _)
-  local styles = config.styles
+-- --- @param _config Config
+M.setup = function(c, _, _)
+  local styles = c.base.styles
   return {
     ["@include"] = { fg = c.base.pink }, -- `import`
     ["@variable"] = { fg = c.base.blue },
