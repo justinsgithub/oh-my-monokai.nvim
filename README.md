@@ -1,9 +1,7 @@
 <div align="center">
     <div class="b-header">
-
             <h1>Oh My Monokai</h1>
             <h2>Edit your code obnoxiously</h2>
-        
     </div>
 </div>
 
