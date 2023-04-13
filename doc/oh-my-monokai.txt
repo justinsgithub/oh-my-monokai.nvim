@@ -1,4 +1,4 @@
-*oh-my-monokai.txt*       For Neovim >= 0.8.0       Last change: 2023 April 03
+*oh-my-monokai.txt*       For Neovim >= 0.8.0       Last change: 2023 April 04
 
 ==============================================================================
 Table of Contents                            *oh-my-monokai-table-of-contents*
@@ -7,7 +7,8 @@ Table of Contents                            *oh-my-monokai-table-of-contents*
   - Installation                                  |oh-my-monokai-installation|
   - Configuration                                |oh-my-monokai-configuration|
   - Usage                                                |oh-my-monokai-usage|
-  - Command                                            |oh-my-monokai-command|
+  - Commands                                          |oh-my-monokai-commands|
+  - Contributions                                |oh-my-monokai-contributions|
   - Credits                                            |oh-my-monokai-credits|
 
 
@@ -251,12 +252,18 @@ USAGE                                                    *oh-my-monokai-usage*
 <
 
 
-COMMAND                                                *oh-my-monokai-command*
+COMMANDS                                              *oh-my-monokai-commands*
 
 
 - run command `OMMPalette` to launch a menu and choose theme palette, you must have nui.nvim <https://github.com/MunifTanjim/nui.nvim> installed
 - or run command `OMM` with parameter to change theme palette: For example:
     > `OMM justinsgithub`
+
+
+CONTRIBUTIONS                                    *oh-my-monokai-contributions*
+
+Pull requests welcome, especially for adding more plugins support or creating
+your own palette (instructions above)
 
 
 CREDITS                                                *oh-my-monokai-credits*

@@ -1,9 +1,7 @@
 <div align="center">
     <div class="b-header">
-        <a class="active" href="https://github.com/justinsgithub/oh-my-monokai.nvim">
             <h1>Oh My Monokai</h1>
             <h2>Edit your code obnoxiously</h2>
-        </a>
     </div>
 </div>
 
