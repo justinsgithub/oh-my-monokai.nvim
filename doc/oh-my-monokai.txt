@@ -1,4 +1,4 @@
-*oh-my-monokai.txt*        For Neovim >= 0.8.0        Last change: 2023 May 21
+*oh-my-monokai.txt*        For Neovim >= 0.8.0        Last change: 2023 May 22
 
 ==============================================================================
 Table of Contents                            *oh-my-monokai-table-of-contents*
