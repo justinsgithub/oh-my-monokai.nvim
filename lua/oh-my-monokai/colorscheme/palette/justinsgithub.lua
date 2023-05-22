@@ -8,8 +8,7 @@ local magenta = '#bf40bf'
 local purple = '#e542ff'
 local yellow = '#ffd945'
 local orange = '#ff8b39'
---[[ local green = '#81f900' ]]
-local green = purple
+local green = '#81f900'
 local leaf = '#6fd80d'
 local blue = '#007dd8'
 local sky = '#00a0e4'
@@ -32,7 +31,7 @@ return {
   accent1 = red,
   accent2 = orange,
   accent3 = yellow,
-  accent4 = green,
+  accent4 = purple,
   accent5 = sky,
   dimmed1 = light_grey,
   dimmed2 = grey, -- border
@@ -57,7 +56,7 @@ return {
   preproc = yellow,
   str = yellow,
   identifier = orange,
-  func = green,
+  func = purple,
   tag = orange,
   type = blue,
   todo = pink,

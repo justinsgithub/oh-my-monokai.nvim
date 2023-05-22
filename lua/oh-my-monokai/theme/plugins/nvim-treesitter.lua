@@ -52,10 +52,10 @@ M.setup = function(c, _, _)
     ["@type.python"] = { fg = c.base.blue },
     ["@keyword.python"] = { fg = c.base.blue, italic = styles.keyword.italic },
     ["@variable.builtin.python"] = {
-      fg = c.editorSuggestWidget.foreground,
+      fg = c.editorSuggestWidget.green,
       italic = true,
     },
-    ["@field.python"] = { fg = c.base.white },
+    ["@field.python"] = { fg = c.base.green },
     ["@variable.python"] = { fg = c.base.white },
     ["@constructor.python"] = { fg = c.base.green },
     ["@method.python"] = { fg = c.base.green },
