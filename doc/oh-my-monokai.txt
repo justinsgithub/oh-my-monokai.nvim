@@ -1,4 +1,4 @@
-*oh-my-monokai.txt*       For Neovim >= 0.8.0       Last change: 2023 April 04
+*oh-my-monokai.txt*        For Neovim >= 0.8.0        Last change: 2023 May 21
 
 ==============================================================================
 Table of Contents                            *oh-my-monokai-table-of-contents*
@@ -109,7 +109,6 @@ IMPORTANT: make sure you run script to add your palette to the palette list
 
 PLUGIN SUPPORT ~
 
-
 - alpha-nvim <https://github.com/goolord/alpha-nvim>
 - bufferLine.nvim <https://github.com/akinsho/bufferline.nvim>
 - Cmp <https://github.com/hrsh7th/nvim-cmp>
@@ -176,7 +175,6 @@ Example configuration:
           underline_visible = false,
         },
         indent_blankline = {
-          context_highlight = "default",
           context_start_underline = false,
         },
       },
@@ -187,7 +185,6 @@ Example configuration:
 
 
 USAGE                                                    *oh-my-monokai-usage*
-
 
 - Enable this colorscheme by using the following command after `setup`
 
@@ -204,7 +201,6 @@ USAGE                                                    *oh-my-monokai-usage*
     vim.cmd([[colorscheme oh-my-monokai]])
 <
 
-
 - Toenable `oh-my-monokai` for `Lualine`
 
 >lua
@@ -217,7 +213,6 @@ USAGE                                                    *oh-my-monokai-usage*
     }
 <
 
-
 - Toenable `oh-my-monokai` for `barbecue`
 
 >lua
@@ -228,14 +223,12 @@ USAGE                                                    *oh-my-monokai-usage*
     }
 <
 
-
 - Toenable `oh-my-monokai` for `lightline`
 
 >vim
     " Vim Script
     let g:lightline = {'colorscheme': 'omm'}
 <
-
 
 - Overridefunction:
 
@@ -253,7 +246,6 @@ USAGE                                                    *oh-my-monokai-usage*
 
 
 COMMANDS                                              *oh-my-monokai-commands*
-
 
 - run command `OMMPalette` to launch a menu and choose theme palette, you must have nui.nvim <https://github.com/MunifTanjim/nui.nvim> installed
 - or run command `OMM` with parameter to change theme palette: For example:
